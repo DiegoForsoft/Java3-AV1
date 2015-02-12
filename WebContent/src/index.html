@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="loja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bem-vindo</title>
+        <link rel="stylesheet" href="estilo/bootstrap.min.css">
+        <link rel="stylesheet" href="estilo/estilo.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="centralizado">
+            	<h1>Titulo.</h1>
+                <hr>
+            </header>
+            <div>
+                <ng-view></ng-view>
+            </div>
+            <footer class="centralizado">
+                <hr>
+                <p>&copy; Copyright 2015</p>	
+            </footer>
+        </div>
+        <script src="vendor/angular.min.js"></script>
+        <script src="vendor/angular-route.min.js"></script>
+        <script src="main.js"></script>
+        <script src="controller/FuncionarioController.js"></script>
+
+    </body>
+
+</html>

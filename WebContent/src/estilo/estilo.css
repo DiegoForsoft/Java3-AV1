@@ -1,0 +1,14 @@
+.centralizado {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+}
+
+.erro-do-mal {
+	background-color: #f2dede;
+	color: #a94442;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}

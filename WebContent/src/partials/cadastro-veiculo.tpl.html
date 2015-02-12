@@ -1,0 +1,40 @@
+<h1>Cadastro de Veiculos</h1>
+
+<form name="formCadastroVeiculo" ng-submit="enviarDados()" novalidate>
+    <label>Chassi*</label>
+    <input ng-model="chassi" type="text" name="chassi" required>
+    <span ng-class="{'erro-do-mal' : formCadastroVeiculo.chassi.$invalid}" ng-show="formCadastroVeiculo.chassi.$invalid && !formCadastroVeiculo.chassi.$pristine">    erro no campo chassi.</span>
+    <br/>
+    
+    <label>Montadora*</label>
+    <input ng-model="montadora" type="text" name="montadora" required>
+    
+    <br/>
+    <label>Modelo*</label>
+    <input ng-model="modelo" type="text" name="modelo" required>
+    
+<!--     <br/> -->
+<!--     <label>Modelo*</label> -->
+<!--     <select name="modelo" ng-model="selecionado-tipo" ng-options="opcaoModelo for opcaoModelo in opcoes.modelo"></select> -->
+    
+<!--     <br/> -->
+<!--     <label>Cor*</label> -->
+<!--     <select name="cor" ng-model="selecionado-tipo" ng-options="opcaoCor for opcaoCor in opcoes.cor"></select> -->
+    
+    <br/>
+    <label>Monetização*</label>
+    <input ng-model="monetizacao" type="number" name="monetizacao" required>
+    
+    <br/>
+    <label>Cambio*</label>
+    <input ng-model="cambio" type="text" name="cambio" required>
+    
+    <br/>
+    <label>Preco*</label>
+    <input ng-model="preco" type="number" name="preco" required>
+    
+    <br/>
+    <button class="btn btn-primary" type="submit" ng-disabled="formCadastroVeiculo.$invalid">Enviar</button>
+</form>   
+
+<a href="index.html">Voltar</a>
