@@ -2,17 +2,17 @@ package br.com.projeto.java.av1.entity;
 
 import br.com.projeto.java.av1.enumeracoes.Cambio;
 import br.com.projeto.java.av1.enumeracoes.Cor;
-import br.com.projeto.java.av1.enumeracoes.TipoCarro;
+import br.com.projeto.java.av1.enumeracoes.TipoMotocicleta;
 
-public class Carro {
+public class Motocicleta {
 	private int id;
 	private String chassi;
 	private String montadora;
 	private String modelo;
-	private TipoCarro tipo;
+	private TipoMotocicleta tipo;
 	private Cor cor;
-	private double motorizacao;
-	private Cambio cambio;
+	private int cilindrada;
+	private int capacidadeTanque;
 	private double preco;
 
 	public int getId() {
@@ -47,11 +47,11 @@ public class Carro {
 		this.modelo = modelo;
 	}
 
-	public TipoCarro getTipo() {
+	public TipoMotocicleta getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(TipoCarro tipo) {
+	public void setTipo(TipoMotocicleta tipo) {
 		this.tipo = tipo;
 	}
 
@@ -63,24 +63,24 @@ public class Carro {
 		this.cor = cor;
 	}
 
-	public double getMotorizacao() {
-		return motorizacao;
-	}
-
-	public void setMotorizacao(double motorizacao) {
-		this.motorizacao = motorizacao;
-	}
-
-	public Cambio getCambio() {
-		return cambio;
-	}
-
-	public void setCambio(Cambio cambio) {
-		this.cambio = cambio;
-	}
-
 	public double getPreco() {
 		return preco;
+	}
+
+	public int getCilindrada() {
+		return cilindrada;
+	}
+
+	public void setCilindrada(int cilindrada) {
+		this.cilindrada = cilindrada;
+	}
+
+	public int getCapacidadeTanque() {
+		return capacidadeTanque;
+	}
+
+	public void setCapacidadeTanque(int capacidadeTanque) {
+		this.capacidadeTanque = capacidadeTanque;
 	}
 
 	public void setPreco(double preco) {
