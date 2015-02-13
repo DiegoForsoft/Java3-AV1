@@ -17,7 +17,6 @@ public class CarroDao {
 	 */
 	
 	private Connection connection = null;
-	private String driver = "com.mysql.jdbc.Driver";
 	
 	public void adicionarCarro(Carro c) throws SQLException  
 	{
@@ -25,10 +24,11 @@ public class CarroDao {
 		{
 			this.connection.setAutoCommit(false);
 			
-			Class.forName(this.driver);
+			
 			this.connection = ConnectionFactory.getConnection();
 			
-			String sql = "INSERT INTO carro (chassi, montadora, modelo, tipo, cor, motorizacao, cambio, preco)" + "VALUES(?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO carro (chassi, montadora, modelo, tipo, cor, motorizacao, cambio, preco)" + 
+						 "VALUES(?,?,?,?,?,?,?,?)";
 			PreparedStatement prst = this.connection.prepareStatement(sql);
 			
 			prst.setString(1, c.getChassi());
@@ -40,14 +40,7 @@ public class CarroDao {
 			prst.setObject(7, c.getCambio());
 			prst.setFloat(8, c.getPreco());
 			prst.execute();
-		}
-		catch(ClassNotFoundException e)
-		{
-			this.connection.rollback();
-			throw new RuntimeException(e);
-		}
-		catch(SQLException s)
-		{
+		} catch(SQLException | ClassNotFoundException s) {
 			this.connection.rollback();
 			throw new RuntimeException(s);
 		}
