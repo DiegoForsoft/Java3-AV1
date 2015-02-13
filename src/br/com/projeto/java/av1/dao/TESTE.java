@@ -3,10 +3,11 @@ import java.sql.SQLException;
 
 import br.com.projeto.java.av1.entity.*;
 import br.com.projeto.java.av1.enumeracoes.*;
+import br.com.projeto.java.av1.exception.AcessoIlegalBanco;
 
 public class TESTE 
 {
-	public static void main(String[] args) throws SQLException 
+	public static void main(String[] args) throws SQLException, AcessoIlegalBanco 
 	{
 		Carro carro = new Carro();
 		carro.setChassi("12345");

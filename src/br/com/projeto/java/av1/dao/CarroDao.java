@@ -18,13 +18,14 @@ public class CarroDao {
 	
 	private Connection connection = null;
 	
-	public void adicionarCarro(Carro c) throws SQLException  
+	public void adicionarCarro(Carro c) throws SQLException, AcessoIlegalBanco  
 	{
 		try
 		{
+			this.connection = ConnectionFactory.getConnection();
 			this.connection.setAutoCommit(false);
 			
-			this.connection = ConnectionFactory.getConnection();
+
 			
 			String sql = "INSERT INTO carro (chassi, montadora, modelo, tipo, cor, motorizacao, cambio, preco)" + 
 						 "VALUES(?,?,?,?,?,?,?,?)";
