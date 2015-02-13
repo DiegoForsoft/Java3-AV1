@@ -11,9 +11,9 @@ public class Carro {
 	private String modelo;
 	private TipoCarro tipo;
 	private Cor cor;
-	private double motorizacao;
+	private float motorizacao;
 	private Cambio cambio;
-	private double preco;
+	private float preco;
 
 	public int getId() {
 		return id;
@@ -63,11 +63,11 @@ public class Carro {
 		this.cor = cor;
 	}
 
-	public double getMotorizacao() {
+	public float getMotorizacao() {
 		return motorizacao;
 	}
 
-	public void setMotorizacao(double motorizacao) {
+	public void setMotorizacao(float motorizacao) {
 		this.motorizacao = motorizacao;
 	}
 
@@ -79,11 +79,11 @@ public class Carro {
 		this.cambio = cambio;
 	}
 
-	public double getPreco() {
+	public float getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
 }
