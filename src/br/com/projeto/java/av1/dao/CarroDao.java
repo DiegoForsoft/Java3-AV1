@@ -1,7 +1,7 @@
 package br.com.projeto.java.av1.dao;
 
 import br.com.projeto.java.av1.entity.Carro;
-import br.com.projeto.java.av1.exception.InsersaoNoBancoInvalidException;
+import br.com.projeto.java.av1.exception.AcessoIlegalBanco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,11 +9,11 @@ import java.sql.SQLException;
 
 public class CarroDao {
 	
-	/**
+	/**blz
 	 * Método para adicionar o carro no banco de dados
-	 * @throws InsersaoNoBancoInvalidException - dispara essa exceção caso de problemas no insert na base, 
+	 * @throws AcessoIlegalBanco - dispara essa exceção caso de problemas no insert na base, 
 	 * <br/> o roolback é feito. VI A MERDA. CALMA AI VOU RESOLVER. blz
-	 * @param c
+	 * @param c :D :D  :D
 	 */
 	
 	private Connection connection = null;
@@ -23,7 +23,6 @@ public class CarroDao {
 		try
 		{
 			this.connection.setAutoCommit(false);
-			
 			
 			this.connection = ConnectionFactory.getConnection();
 			

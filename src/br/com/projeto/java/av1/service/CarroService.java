@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import br.com.projeto.java.av1.dao.CarroDao;
 import br.com.projeto.java.av1.entity.Carro;
-import br.com.projeto.java.av1.exception.InsersaoNoBancoInvalidException;
+import br.com.projeto.java.av1.exception.AcessoIlegalBanco;
 
 public class CarroService {
 }
