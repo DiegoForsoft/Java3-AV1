@@ -12,4 +12,7 @@ public enum TipoMotocicleta {
 	TipoMotocicleta(int codRecebido) {
 		this.cod = codRecebido;
 	}
+	public int getCod() {
+		return cod;
+	}
 }

@@ -12,4 +12,8 @@ public enum TipoCarro {
 	TipoCarro(int codRecebido) { 
 		this.cod = codRecebido;
 	}
+	public int getCod() {
+		return cod;
+	}
+	
 }

@@ -9,4 +9,7 @@ public enum Cambio {
 	Cambio(int cod) {
 		this.cod = cod;
 	}
+	public int getCod() {
+		return cod;
+	}
 }

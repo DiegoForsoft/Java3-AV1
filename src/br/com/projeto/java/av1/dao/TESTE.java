@@ -21,7 +21,6 @@ public class TESTE
 		
 		CarroDao cd = new CarroDao();
 		cd.adicionarCarro(carro);
-		
 	}
 
 }

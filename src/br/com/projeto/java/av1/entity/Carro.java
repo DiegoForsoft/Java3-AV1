@@ -50,6 +50,9 @@ public class Carro {
 	public TipoCarro getTipo() {
 		return tipo;
 	}
+	public int getTipoCarro() {
+		return this.tipo.getCod();
+	}
 
 	public void setTipo(TipoCarro tipo) {
 		this.tipo = tipo;
@@ -57,6 +60,10 @@ public class Carro {
 
 	public Cor getCor() {
 		return cor;
+	}
+	
+	public int getCorInt() {
+		return this.cor.getCod();
 	}
 
 	public void setCor(Cor cor) {
@@ -73,6 +80,10 @@ public class Carro {
 
 	public Cambio getCambio() {
 		return cambio;
+	}
+	
+	public int getCambioInt() {
+		return this.cambio.getCod();
 	}
 
 	public void setCambio(Cambio cambio) {

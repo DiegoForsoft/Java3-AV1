@@ -9,11 +9,11 @@ import java.sql.SQLException;
 
 public class CarroDao {
 	
-	/**blz
+	/**
 	 * Método para adicionar o carro no banco de dados
 	 * @throws AcessoIlegalBanco - dispara essa exceção caso de problemas no insert na base, 
-	 * <br/> o roolback é feito. VI A MERDA. CALMA AI VOU RESOLVER. blz
-	 * @param c :D :D  :D
+	 * <br/> o roolback é feito.
+	 * @param c 
 	 */
 	
 	private Connection connection = null;
@@ -25,8 +25,6 @@ public class CarroDao {
 			this.connection = ConnectionFactory.getConnection();
 			this.connection.setAutoCommit(false);
 			
-
-			
 			String sql = "INSERT INTO carro (chassi, montadora, modelo, tipo, cor, motorizacao, cambio, preco)" + 
 						 "VALUES(?,?,?,?,?,?,?,?)";
 			PreparedStatement prst = this.connection.prepareStatement(sql);
@@ -34,12 +32,14 @@ public class CarroDao {
 			prst.setString(1, c.getChassi());
 			prst.setString(2, c.getMontadora());
 			prst.setString(3, c.getModelo());
-			prst.setObject(4, c.getTipo());
-			prst.setObject(5, c.getCor());
+			prst.setInt(4, c.getTipoCarro());
+			prst.setInt(5, c.getCorInt());
 			prst.setFloat(6, c.getMotorizacao());
-			prst.setObject(7, c.getCambio());
+			prst.setInt(7, c.getCambioInt());
 			prst.setFloat(8, c.getPreco());
 			prst.execute();
+			this.connection.commit();
+			System.out.println("Deu Certo ou pelo menos quase");
 		} catch(SQLException | ClassNotFoundException s) {
 			this.connection.rollback();
 			throw new RuntimeException(s);
