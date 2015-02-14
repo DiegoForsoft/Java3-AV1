@@ -50,6 +50,10 @@ public class Motocicleta {
 	public TipoMotocicleta getTipo() {
 		return tipo;
 	}
+	
+	public int getTipoInt() {
+		return this.tipo.getCod();
+	}
 
 	public void setTipo(TipoMotocicleta tipo) {
 		this.tipo = tipo;
@@ -58,12 +62,16 @@ public class Motocicleta {
 	public Cor getCor() {
 		return cor;
 	}
+	
+	public int getCorInt() {
+		return this.cor.getCod();
+	}
 
 	public void setCor(Cor cor) {
 		this.cor = cor;
 	}
 
-	public double getPreco() {
+	public float getPreco() {
 		return preco;
 	}
 

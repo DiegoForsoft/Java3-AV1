@@ -17,15 +17,16 @@ public class ConnectionFactory
 		
 	}
 	
-	public static Connection getConnection() throws ClassNotFoundException, AcessoIlegalBanco {
+	public static Connection getConnection() throws AcessoIlegalBanco, ClasseNaoEncontrada {
 	     try {
 	    	 Class.forName(DRIVER); // Depois trata essa exception, mesmo esquema da debaixo.
 	         return DriverManager.getConnection(
 	 "jdbc:mysql://localhost:3306/loja", "root", "javaav1");
 	     } catch(SQLException e) {  
-	    	 
+	    	 throw new AcessoIlegalBanco("Erro ao Acessar o Banco");
+	     }catch(ClassNotFoundException c){
+	    	 throw new ClasseNaoEncontrada("Classe para carregar o driver não foi encontrada");
 	     }
-	         throw new AcessoIlegalBanco("Deu merda");   //Tem que criar uma exception especifica., Se quiser eu crio importou ela? não, mas vai atuomatico
 	 }
 	 
 	

@@ -2,6 +2,7 @@ package br.com.projeto.java.av1.dao;
 
 import br.com.projeto.java.av1.entity.Carro;
 import br.com.projeto.java.av1.exception.AcessoIlegalBanco;
+import br.com.projeto.java.av1.exception.ClasseNaoEncontrada;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +19,7 @@ public class CarroDao {
 	
 	private Connection connection = null;
 	
-	public void adicionarCarro(Carro c) throws SQLException, AcessoIlegalBanco  
+	public void adicionarCarro(Carro c) throws SQLException  
 	{
 		try
 		{
@@ -40,7 +41,12 @@ public class CarroDao {
 			prst.execute();
 			this.connection.commit();
 			System.out.println("Deu Certo ou pelo menos quase");
-		} catch(SQLException | ClassNotFoundException s) {
+		} catch(AcessoIlegalBanco e ) {
+			this.connection.rollback();
+			System.out.println(e.getMessage());
+		}
+		catch(ClasseNaoEncontrada s)
+		{
 			this.connection.rollback();
 			throw new RuntimeException(s);
 		}
