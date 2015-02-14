@@ -13,7 +13,7 @@ public class Motocicleta {
 	private Cor cor;
 	private int cilindrada;
 	private int capacidadeTanque;
-	private double preco;
+	private float preco;
 
 	public int getId() {
 		return id;
@@ -83,7 +83,7 @@ public class Motocicleta {
 		this.capacidadeTanque = capacidadeTanque;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
 }
