@@ -13,16 +13,15 @@ public class MotocicletaDao {
 	
 private Connection connection = null;
 	
-	public void adicionarMotocicleta(Motocicleta m) throws SQLException  
-	{
-		try
-		{
+	public void adicionarMotocicleta(Motocicleta m) throws SQLException  {
+		PreparedStatement prst = null;
+		try{
 			this.connection = ConnectionFactory.getConnection();
 			this.connection.setAutoCommit(false);
 			
 			String sql = "INSERT INTO motocicleta (chassi, montadora, modelo, tipo, cor, cilindrada, capacidade_tanque, preco)" + 
 						 "VALUES(?,?,?,?,?,?,?,?)";
-			PreparedStatement prst = this.connection.prepareStatement(sql);
+			prst = this.connection.prepareStatement(sql);
 			
 			prst.setString(1, m.getChassi());
 			prst.setString(2, m.getMontadora());
@@ -36,14 +35,15 @@ private Connection connection = null;
 			
 			this.connection.commit();
 			System.out.println("Deu Certo ou pelo menos quase");
-		} catch(AcessoIlegalBanco e ) {
+		}catch(AcessoIlegalBanco e ) {
 			this.connection.rollback();
 			System.out.println(e.getMessage());
-		}
-		catch(ClasseNaoEncontrada s)
-		{
+		}catch(ClasseNaoEncontrada s){
 			this.connection.rollback();
-			throw new RuntimeException(s);
+			System.out.println(s.getMessage());
+		}finally{
+			prst.close();
+			this.connection.close();
 		}
 	}
 }
