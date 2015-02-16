@@ -20,7 +20,7 @@ public enum TipoCarro {
 		return cod;
 	}
 	
-	/*public TipoCarro setCod(int cod)
+	public TipoCarro setCod(int cod)
 	{
 		switch(cod)
 		{
@@ -31,6 +31,6 @@ public enum TipoCarro {
 		case 5: return SEDA_MEDIO;
 		default: return null;
 		}
-	}*/
+	}
 	
 }

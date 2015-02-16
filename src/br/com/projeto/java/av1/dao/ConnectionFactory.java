@@ -19,7 +19,7 @@ public class ConnectionFactory
 	
 	public static Connection getConnection() throws AcessoIlegalBanco, ClasseNaoEncontrada {
 	     try {
-	    	 Class.forName(DRIVER); // Depois trata essa exception, mesmo esquema da debaixo.
+	    	 Class.forName(DRIVER); 
 	         return DriverManager.getConnection(
 	 "jdbc:mysql://localhost:3306/loja", "root", "javaav1");
 	     } catch(SQLException e) {  
