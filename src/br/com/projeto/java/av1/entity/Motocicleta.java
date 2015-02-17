@@ -2,6 +2,7 @@ package br.com.projeto.java.av1.entity;
 
 import br.com.projeto.java.av1.enumeracoes.Cambio;
 import br.com.projeto.java.av1.enumeracoes.Cor;
+import br.com.projeto.java.av1.enumeracoes.TipoCarro;
 import br.com.projeto.java.av1.enumeracoes.TipoMotocicleta;
 
 public class Motocicleta {
@@ -14,7 +15,24 @@ public class Motocicleta {
 	private int cilindrada;
 	private int capacidadeTanque;
 	private float preco;
-
+	
+	public Motocicleta(){
+		
+	}
+	
+	public Motocicleta(String chassi, String montadora,
+			String modelo, TipoMotocicleta tipo, Cor cor, int cilindrada,
+			int capacidadeTanque, float preco) {
+		this.chassi = chassi;
+		this.montadora = montadora;
+		this.modelo = modelo;
+		this.tipo = tipo;
+		this.cor = cor;
+		this.cilindrada = cilindrada;
+		this.capacidadeTanque = capacidadeTanque;
+		this.preco = preco;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -50,6 +68,10 @@ public class Motocicleta {
 	public TipoMotocicleta getTipo() {
 		return tipo;
 	}
+	
+	public int getTipoInt() {
+		return this.tipo.getCod();
+	}
 
 	public void setTipo(TipoMotocicleta tipo) {
 		this.tipo = tipo;
@@ -58,12 +80,16 @@ public class Motocicleta {
 	public Cor getCor() {
 		return cor;
 	}
+	
+	public int getCorInt() {
+		return this.cor.getCod();
+	}
 
 	public void setCor(Cor cor) {
 		this.cor = cor;
 	}
 
-	public double getPreco() {
+	public float getPreco() {
 		return preco;
 	}
 
